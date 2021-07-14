@@ -1,0 +1,14 @@
+{
+    "name": "webapps-website",
+    "version": "1.0.0",
+    "private": true,
+    "devDependencies": {
+        "autoprefixer": "^10.3.0",
+        "postcss": "^8.3.5",
+        "tailwindcss": "^2.2.4"
+    },
+    "scripts": {
+        "watch": "npx tailwindcss -i ./src/index.css -o ./dist/css/main.css --watch",
+        "build:tailwind": "cross-env NODE_ENV=production npx tailwindcss -i ./src/index.css -o ./dist/css/main.css --minify"
+    }
+}

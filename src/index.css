@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .auth-bg {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background: #4F46E5;
+        background: linear-gradient(-135deg, #818CF8, #312E81);
+    }
+
+    .dark .auth-bg {
+        background: #6366F1;
+        background: linear-gradient(-135deg, #3c183a, #3447a6);
+    }
+}
