@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="title" content="WebApps - Block (Widget) Manager for CMS, VLE, WordPress or SharePoint">
+    <meta name="description"
+        content="WebApps is a, free open-source, flexible addition to any Content Management System, VLE, WordPress or SharePoint site that allows for HTML input.">
+    <meta name="keywords"
+        content="open-source, open, source, content management system, cms, virtual learning environment, vle, wordpress, sharepoint, html, website, widget, plugin, app, block, flexible, extension">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#4f46e5">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="WebApps">
+    <meta name="application-name" content="WebApps">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#e5e7eb">
+
+    <title>WebApps - Block (Widget) Manager for CMS, VLE, WordPress or SharePoint</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVRYZEQ7P5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VVRYZEQ7P5');
+    </script>
+</head>
+
+<body class="text-gray-800 antialiased">
+    <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 ">
+        <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+            <div class="flex flex-none items-center justify-center mr-4 py-2 text-white">
+                <a href="https://getwebapps.uk" class="flex flex-none items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-indigo-600 dark:text-indigo-500"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                    </svg>
+                    <span class="ml-4 text-2xl font-bold text-white mr-4">WebApps</span>
+                </a>
+                <button
+                    class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden text-white outline-none focus:outline-none"
+                    type="button" onclick="toggleNavbar('collapse-navbar')">
+                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+            <div class="lg:flex flex-grow items-center bg-white lg:bg-transparent lg:shadow-none hidden pt-2"
+                id="collapse-navbar">
+                <ul class="flex flex-col lg:flex-row list-none mr-auto">
+                    <li class="flex items-center">
+                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                            href="https://docs.getwebapps.uk">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 lg:text-gray-300 text-gray-500 text-lg leading-lg mr-2" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Docs</a>
+                    </li>
+                    <li class="flex items-center">
+                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                            href="https://studio.getwebapps.uk">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6 lg:text-gray-300 text-gray-500 text-lg leading-lg mr-2"
+                                viewBox="0 0 512 512" fill="currentColor">
+                                <path
+                                    d="M259.427,394.928L117.068,252.566c-6.13-6.131-16.071-6.131-22.202,0l-42.988,42.988    c-25.004,25.003-41.8,56.564-48.576,91.269c-6.767,34.66-3.09,70.177,10.63,102.715c1.566,3.8,4.574,6.858,8.403,8.478    c21.965,9.281,45.289,13.983,68.793,13.983c11.349,0,22.742-1.096,34.041-3.302c34.704-6.776,66.264-23.573,91.267-48.576    l42.99-42.991C265.558,410.998,265.558,401.059,259.427,394.928z" />
+                                <path
+                                    d="M507.401,80.475L431.526,4.6c-6.13-6.13-16.071-6.131-22.202,0l-29.061,29.06c-12.763,12.763-19.792,29.732-19.792,47.782    c0,13.315,3.837,26.035,10.967,36.92L199.352,290.446l22.202,22.202L393.64,140.562c10.885,7.131,23.605,10.967,36.92,10.967    c18.05,0,35.018-7.029,47.781-19.791l29.061-29.06c2.944-2.944,4.599-6.937,4.599-11.101    C512,87.413,510.347,83.419,507.401,80.475z M456.14,109.535c-6.832,6.832-15.917,10.596-25.579,10.596    c-9.662,0-18.747-3.763-25.579-10.596l-2.515-2.516c-6.832-6.832-10.596-15.917-10.596-25.579s3.764-18.747,10.596-25.579    l17.96-17.96L474.1,91.575L456.14,109.535z" />
+                            </svg>
+                            Studio</a>
+                    </li>
+                </ul>
+                <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+                    <li class="flex items-center">
+                        <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+                            href="https://github.com/RTWA/WebApps">
+                            <svg class="w-6 h-6 lg:text-gray-300 lg:hover:text-gray-100 text-gray-500 text-lg leading-lg"
+                                viewBox="0 0 256 250" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="xMidYMid">
+                                <path
+                                    d="M128.00106,0 C57.3172926,0 0,57.3066942 0,128.00106 C0,184.555281 36.6761997,232.535542 87.534937,249.460899 C93.9320223,250.645779 96.280588,246.684165 96.280588,243.303333 C96.280588,240.251045 96.1618878,230.167899 96.106777,219.472176 C60.4967585,227.215235 52.9826207,204.369712 52.9826207,204.369712 C47.1599584,189.574598 38.770408,185.640538 38.770408,185.640538 C27.1568785,177.696113 39.6458206,177.859325 39.6458206,177.859325 C52.4993419,178.762293 59.267365,191.04987 59.267365,191.04987 C70.6837675,210.618423 89.2115753,204.961093 96.5158685,201.690482 C97.6647155,193.417512 100.981959,187.77078 104.642583,184.574357 C76.211799,181.33766 46.324819,170.362144 46.324819,121.315702 C46.324819,107.340889 51.3250588,95.9223682 59.5132437,86.9583937 C58.1842268,83.7344152 53.8029229,70.715562 60.7532354,53.0843636 C60.7532354,53.0843636 71.5019501,49.6441813 95.9626412,66.2049595 C106.172967,63.368876 117.123047,61.9465949 128.00106,61.8978432 C138.879073,61.9465949 149.837632,63.368876 160.067033,66.2049595 C184.49805,49.6441813 195.231926,53.0843636 195.231926,53.0843636 C202.199197,70.715562 197.815773,83.7344152 196.486756,86.9583937 C204.694018,95.9223682 209.660343,107.340889 209.660343,121.315702 C209.660343,170.478725 179.716133,181.303747 151.213281,184.472614 C155.80443,188.444828 159.895342,196.234518 159.895342,208.176593 C159.895342,225.303317 159.746968,239.087361 159.746968,243.303333 C159.746968,246.709601 162.05102,250.70089 168.53925,249.443941 C219.370432,232.499507 256,184.536204 256,128.00106 C256,57.3066942 198.691187,0 128.00106,0 Z M47.9405593,182.340212 C47.6586465,182.976105 46.6581745,183.166873 45.7467277,182.730227 C44.8183235,182.312656 44.2968914,181.445722 44.5978808,180.80771 C44.8734344,180.152739 45.876026,179.97045 46.8023103,180.409216 C47.7328342,180.826786 48.2627451,181.702199 47.9405593,182.340212 Z M54.2367892,187.958254 C53.6263318,188.524199 52.4329723,188.261363 51.6232682,187.366874 C50.7860088,186.474504 50.6291553,185.281144 51.2480912,184.70672 C51.8776254,184.140775 53.0349512,184.405731 53.8743302,185.298101 C54.7115892,186.201069 54.8748019,187.38595 54.2367892,187.958254 Z M58.5562413,195.146347 C57.7719732,195.691096 56.4895886,195.180261 55.6968417,194.042013 C54.9125733,192.903764 54.9125733,191.538713 55.713799,190.991845 C56.5086651,190.444977 57.7719732,190.936735 58.5753181,192.066505 C59.3574669,193.22383 59.3574669,194.58888 58.5562413,195.146347 Z M65.8613592,203.471174 C65.1597571,204.244846 63.6654083,204.03712 62.5716717,202.981538 C61.4524999,201.94927 61.1409122,200.484596 61.8446341,199.710926 C62.5547146,198.935137 64.0575422,199.15346 65.1597571,200.200564 C66.2704506,201.230712 66.6095936,202.705984 65.8613592,203.471174 Z M75.3025151,206.281542 C74.9930474,207.284134 73.553809,207.739857 72.1039724,207.313809 C70.6562556,206.875043 69.7087748,205.700761 70.0012857,204.687571 C70.302275,203.678621 71.7478721,203.20382 73.2083069,203.659543 C74.6539041,204.09619 75.6035048,205.261994 75.3025151,206.281542 Z M86.046947,207.473627 C86.0829806,208.529209 84.8535871,209.404622 83.3316829,209.4237 C81.8013,209.457614 80.563428,208.603398 80.5464708,207.564772 C80.5464708,206.498591 81.7483088,205.631657 83.2786917,205.606221 C84.8005962,205.576546 86.046947,206.424403 86.046947,207.473627 Z M96.6021471,207.069023 C96.7844366,208.099171 95.7267341,209.156872 94.215428,209.438785 C92.7295577,209.710099 91.3539086,209.074206 91.1652603,208.052538 C90.9808515,206.996955 92.0576306,205.939253 93.5413813,205.66582 C95.054807,205.402984 96.4092596,206.021919 96.6021471,207.069023 Z">
+                                </path>
+                            </svg>
+                            <span class="lg:hidden inline-block ml-2">Star</span></a>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="https://github.com/RTWA/WebApps/releases/latest"
+                            class="bg-white text-gray-800 active:bg-gray-300 hover:bg-gray-300 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 flex items-center"
+                            type="button" style="transition: all 0.15s ease 0s;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Download
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="relative pt-8 pb-16 flex content-center items-center justify-center" style="min-height: 35vh;"
+            id="webapps-privacy">
+            <div class="absolute top-0 w-full h-full bg-center bg-cover block dark:hidden"
+                style='background-image: url("images/LightModeDashboard.png");'>
+                <span id="blackOverlayLight" class="w-full h-full absolute opacity-75 bg-black"></span>
+            </div>
+            <div class="absolute top-0 w-full h-full bg-center bg-cover hidden dark:block"
+                style='background-image: url("images/DarkModeDashboard.png");'>
+                <span id="blackOverlayDark" class="w-full h-full absolute opacity-50 bg-black"></span>
+            </div>
+            <div class="container relative mx-auto">
+                <div class="items-center flex flex-wrap">
+                    <div class="w-full lg:w-8/12 px-4 mx-auto text-center">
+                        <div class="pr-12">
+                            <h1 class="text-white font-semibold text-4xl">
+                                Website Privacy Policy
+                            </h1>
+                            <p class="mt-4 text-lg text-gray-300 lg:w-6/12 mx-auto">
+                                Last Updated 11th November 2021
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+                style="height: 70px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+        </div>
+        <section class="pb-20 bg-gray-300 dark:bg-gray-700" id="privacy">
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-light leading-relaxed pt-8 text-gray-700 dark:text-gray-300">
+                    Thank you for choosing to be part of our community at WebApps ("<strong>Company</strong>",
+                    "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>").
+                    We are committed to protecting your personal information and your right to privacy. If you have any
+                    questions or concerns about this privacy notice or our practices
+                    with regard to your personal information, please contact us at <a
+                        href="mailto:hello@getwebapps.uk">hello@getwebapps.uk</a>.
+                </p>
+
+                <p class="text-lg font-light leading-relaxed pt-3 text-gray-700 dark:text-gray-300">
+                    This privacy notice describes how we might use your information if you:
+                </p>
+                <ul class="list-inside list-disc pl-4 text-gray-700 dark:text-gray-300">
+                    <li>Visit our website at <a href="https://getwebapps.uk">https://getwebapps.uk</a></li>
+                    <li>Engage with us in other related ways - including any sales, marketing, or events</li>
+                </ul>
+
+                <p class="text-lg font-light leading-relaxed pt-3 text-gray-700 dark:text-gray-300">
+                    In this privacy notice, if we refer to:
+                </p>
+                <ul class="list-inside list-disc pl-4 text-gray-700 dark:text-gray-300">
+                    <li>"<strong>Website</strong>", we are referring to any website of ours that references or links to
+                        this policy</li>
+                    <li>"<strong>Services</strong>", we are referring to our Website, and other related services,
+                        including any sales, marketing or events</li>
+                </ul>
+
+                <p class="text-lg font-light leading-relaxed pt-3 mb-4 text-gray-700 dark:text-gray-300">
+                    The purpose of this privacy notice is to explain to you in the clearest way possible what
+                    information we collect, how we use it, and what rights you have in relation to it. If there are any
+                    terms in this privacy notice that you do not agree with, please discontinue use of our Services
+                    immediately.
+                </p>
+
+                <p class="text-center text-lg font-bold leading-relaxed pt-4 mb-4 text-gray-700 dark:text-gray-300">
+                    Please read this privacy notice carefully, as it will help you understand what we do with the
+                    information that we collect.
+                </p>
+            </div>
+        </section>
+        <section class="relative py-20 dark:bg-gray-900" id="toc">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24">
+                <p class="text-lg font-bold leading-relaxed text-gray-700 dark:text-gray-300 uppercase">
+                    Table of contents
+                </p>
+                <ol class="py-4 pl-4 text-gray-700 dark:text-gray-300 uppercase">
+                    <li><a href="#section1" class="hover:text-indigo-600 dark:hover:text-indigo-500">1. What information
+                            do we collect</a></li>
+                    <li><a href="#section2" class="hover:text-indigo-600 dark:hover:text-indigo-500">2. How do we use
+                            your information?</a></li>
+                    <li><a href="#section3" class="hover:text-indigo-600 dark:hover:text-indigo-500">3. Will your
+                            information be shared with anyone?</a></li>
+                    <li><a href="#section4" class="hover:text-indigo-600 dark:hover:text-indigo-500">4. Who will your
+                            information be shared with?</a></li>
+                    <li><a href="#section5" class="hover:text-indigo-600 dark:hover:text-indigo-500">5. Do we use
+                            cookies and other tracking technologies?</a></li>
+                    <li><a href="#section6" class="hover:text-indigo-600 dark:hover:text-indigo-500">6. Is your
+                            information transferred internationally?</a></li>
+                    <li><a href="#section7" class="hover:text-indigo-600 dark:hover:text-indigo-500">7. What us our
+                            stance on third-party websites?</a></li>
+                    <li><a href="#section8" class="hover:text-indigo-600 dark:hover:text-indigo-500">8. How long do we
+                            keep your information?</a></li>
+                    <li><a href="#section9" class="hover:text-indigo-600 dark:hover:text-indigo-500">9. How do we keep
+                            your information safe?</a></li>
+                    <li><a href="#section10" class="hover:text-indigo-600 dark:hover:text-indigo-500">10. Do we collect
+                            information from minors?</a></li>
+                    <li><a href="#section11" class="hover:text-indigo-600 dark:hover:text-indigo-500">11. What are your
+                            privacy rights?</a></li>
+                    <li><a href="#section12" class="hover:text-indigo-600 dark:hover:text-indigo-500">12. Controls for
+                            do-not-track features</a></li>
+                    <li><a href="#section13" class="hover:text-indigo-600 dark:hover:text-indigo-500">13. Do California
+                            residents have specific privacy rights?</a></li>
+                    <li><a href="#section14" class="hover:text-indigo-600 dark:hover:text-indigo-500">14. Do we make
+                            updates to this notice?</a></li>
+                    <li><a href="#section15" class="hover:text-indigo-600 dark:hover:text-indigo-500">15. How can you
+                            contact us about this notice?</a></li>
+                    <li><a href="#section16" class="hover:text-indigo-600 dark:hover:text-indigo-500">16. How can you
+                            review, update, or delete the data we collect from you?</a></li>
+                </ol>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-300 dark:bg-gray-700" id="section1">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    1. What information do we collect?
+                </p>
+
+                <p class="text-lg font-bold leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    Personal information you disclose to us
+                </p>
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We collect person information that you provide to us.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We collect personal information that you voluntarily provide to us when you express an interest in
+                    obtaining information about us or our products and Services, when you participate in activities on
+                    the Website or otherwise when you contact us.
+                    <br />&nbsp;<br />
+                    The personal informaion that we collect depends on the context of your interactions with us and the
+                    Website, the choices you make and the procuts and features you use. The personal information we
+                    collect may include the following:
+                    <br />&nbsp;<br />
+                    <span class="italic">No PII is provided.</span>
+                    <br />&nbsp;<br />
+                    All personal information that you provide to us must be true, complete and accurate, and you must
+                    notify us of any changes to such personal information.
+                </p>
+
+                <p class="text-lg font-bold leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    Information automatically collected
+                </p>
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> Some information - such as your Internet Protocol (IP) address and/or
+                    browser and device characteristics - is collected when you visit our Website.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We automatically collect certain information when you visit, use or navigate the Website. This
+                    information does not reveal your specific identity (like your name or contact information) but may
+                    include device and usage information, such as your IP address, browser and device characteristics,
+                    operating system, language preferences, referring URLs, device name, country, location, information
+                    about how and when you use our Website and other technical information. This information is
+                    primarily needed to maintain the security and operation of our Website, and for our internal
+                    analytics and reporting purposes.
+                    <br />&nbsp;<br />
+                    Like many businesses, we also collect information through cookies and similar technologies.
+                    <br />&nbsp;<br />
+                    The information we collect includes:
+                </p>
+                <ul class="list-inside list-disc pl-4 text-gray-700 dark:text-gray-300">
+                    <li class="py-2">
+                        <em>Log and Usage Data.</em> Log and usage data is service-related, diagnostic, usage and
+                        performance information our servers automatically collect when you access or use our Website and
+                        which we record in log files. Depending on how you interact with us, this log data may include
+                        your IP address, device information, browser type and settings and information about your
+                        activity in the Website (such as the date/time stamps associated with your usage, pages and
+                        files viewed, searches and other actions you take such as which features you use), device event
+                        information (such as system activity, error reports (sometimes called 'crash dumps') and
+                        hardware settings).
+                    </li>
+                    <li class="py-2">
+                        <em>Device Data.</em> We collect device data such as information about your computer, phone,
+                        tablet or other device you use to access the Website. Depending on the device used, this device
+                        data may include information such as your IP address (or proxy server), device and application
+                        identification numbers, location, browser type, hardware model Internet service provider and/or
+                        mobile carrier, operating system and system configuration information.
+                    </li>
+                    <li class="py-2">
+                        <em>Location Data.</em> We collect location data such as information about your device's
+                        location, which can be either precise or imprecise. How much information we collect depends on
+                        the type and settings of the device you use to access the Website. For example, we may use GPS
+                        and other technologies to collect geolocation data that tells us your current location (based on
+                        your IP address). You can opt out of allowing us to collect this information either by refusing
+                        access to the information or by disabling your Location setting on your device. Note however, if
+                        you choose to opt out, you may not be able to use certain aspects of the Services.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="relative pb-20 dark:bg-gray-900" id="section2">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    2. How do we use your information?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We process your information for purposes based on legimate business
+                    interests, the fulfillment of our contract with you, compliance with our legal obligations, and/or
+                    your consent.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We use personal information collected via our Website for a variety of business purposes described
+                    below. We process your personal information for these purposes in reliance on our legitimate
+                    business interests, in order to enter into or perform a contract with you, with your consent, and/or
+                    for compliance with our legal obligations. We indicate the specific processing grounds we rely on
+                    next to each purpose listed below.
+                    <br />&nbsp;<br />
+                    In legal terms, we are generally the "data controller" under European data protection laws since we
+                    determine the means and/or purposes of the data processing we perform. However, if you are a
+                    business customer with whom we have entered into a data processing agreement for the provision of
+                    corporate services to you, then you would be the "data controller" and we would be the "data
+                    processor" under European data protection laws since we would be processing data on your behalf in
+                    accordance with your instructions.
+                    <br />&nbsp;<br />
+                    We use the information we collect or receive:
+                </p>
+                <ul class="list-inside list-disc pl-4 text-gray-700 dark:text-gray-300">
+                    <li class="py-2">
+                        <strong>To send you marketing and promotional communications.</strong> We and/or our third-party
+                        marketing partners may use the personal information you send to us for our marketing purposes,
+                        if this is in accordance with your marketing preferences. For example, when expressing an
+                        interest in obtaining information about us or our Website, subscribing to marketing or otherwise
+                        contacting us, we will collect personal information from you. You can opt-out of our marketing
+                        emails at any time (see the section "<a href="#section11"
+                            class="hover:text-indigo-600 dark:hover:text-indigo-500 uppercase">What are you privacy
+                            rights?</a>" below).
+                    </li>
+                    <li class="py-2">
+                        <strong>Deliver targeted advertising to you.</strong> We may use your information to develop and
+                        display personalized content and advertising (and work with third parties who do so) tailored to
+                        your interests and/or location and to measure its effectiveness.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-300 dark:bg-gray-700" id="section3">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    3. Will your information be shared with anyone?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We only share information with your consent, to comply with laws, to
+                    provide you with services, to protect your rights, or to fulfill business obligations.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We may process or share your data that we hold based on the following legal basis:
+                </p>
+                <ul class="list-inside list-disc pl-4 text-gray-700 dark:text-gray-300">
+                    <li class="py-2">
+                        <strong>Consent:</strong> We may process your data if you have given us specific consent to use
+                        your personal information for a specific purpose.
+                    </li>
+                    <li class="py-2">
+                        <strong>Legitimate Interests:</strong> We may process your data when it is reasonably necessary
+                        to achieve our legitimate business interests.
+                    </li>
+                    <li class="py-2">
+                        <strong>Performance of a Contact:</strong> Where we have entered into a contract with you, we
+                        may process yoru personal information to fulfill the terms of our contact.
+                    </li>
+                    <li class="py-2">
+                        <strong>Legal Obligations:</strong> We may disclose your information where we are legally
+                        required to do so in order to comply with applicable law, governmental requests, a judicial
+                        proceeding, court order, or legal process, such as in response to a court order or subpoena
+                        (include in response to public authorities to meeting national security or law enforcement
+                        requirements).
+                    </li>
+                    <li class="py-2">
+                        <strong>Vital Interests:</strong> We may disclose your information where we believe it is
+                        necessary to investigate, prevent, or take action regarding potential violations of our
+                        policies, suspected fraud, situations involving potential threats to the safety of any person
+                        and illegal activites, or as evidence in litigation in which we are involved.
+                    </li>
+                </ul>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    More specifically, we may need to process your data or share your personal information in the
+                    following situations:
+                </p>
+                <ul class="list-inside list-disc pl-4 text-gray-700 dark:text-gray-300">
+                    <li class="py-2">
+                        <strong>Business Transfers.</strong> We may share or transfer your information in connection
+                        with, or during negotiations of, any merger, sale of company assets, financing, or acquisition
+                        of all or a portion of our business to another company.
+                    </li>
+                    <li class="py-2">
+                        <strong>Vendors, Consultants and Other Third-Party Service Providers.</strong> We may share your
+                        data with third-party vendors, service providers, contractors or agents who perform services for
+                        us or on our behalf and require access to such information to do that work. Examples include:
+                        payment processing, data analysis, email delivery, hosting services, customer service and
+                        marketing efforts. We may allow selected third parties to use tracking technology on the
+                        Website, which will enable them to collect data on our behalf about how you interact with our
+                        Website over time. This information may be used to, among other things, analyze and track data,
+                        determine the popularity of certain content, pages or features, and better understand online
+                        activity. Unless described in this notice, we do not share, sell, rent or trade any of your
+                        information with third parties for their promotional purposes. We have contracts in place with
+                        our data processors, which are designed to help safeguard your personal information. This means
+                        that they cannot do anything with your personal information unless we have instructed them to do
+                        it. They will also not share your personal information with any organization apart from us. They
+                        also commit to protect the data they hold on our behalf and to retain it for the period we
+                        instruct.
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="relative pb-20 dark:bg-gray-900" id="section4">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    4. Who will your information be shared with?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We only share information with the following third parties.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We only share and disclose your information with the following third parties. If we have processed
+                    your data based on your consent and you wish to revoke your consent, please contact us using the
+                    contact details provided in the sectino below titled "<a href="#section15"
+                        class="hover:text-indigo-600 dark:hover:text-indigo-500 uppercase">How can you contact us about
+                        this noticed?</a>"
+                </p>
+                <ul class="list-inside list-disc pl-4 text-gray-700 dark:text-gray-300">
+                    <li class="py-2">
+                        <strong>Advertising, Direct Marketing and Lead Generation</strong>
+                        <br />
+                        Google AdSense
+                    </li>
+                    <li class="py-2">
+                        <strong>Web and Mobile Analytics</strong>
+                        <br />
+                        Google Analytics
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-300 dark:bg-gray-700" id="section5">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    5. Do we use cookies and other tracking technologies?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We may use cookies and other tracking technologies to collect and store
+                    your information.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We may use cookies and similar tracking technologies (like web beacons and pixels) to access or
+                    store information. Specific information about how we use such technologies and how you can refuse
+                    certain cookies is set out in our <a href="/cookies.html"
+                        class="hover:text-indigo-600 dark:hover:text-indigo-500">Cookie Notice.</a>
+                </p>
+            </div>
+        </section>
+        <section class="relative pb-20 dark:bg-gray-900" id="section6">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    6. Is your information transferred internationally?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We may transfer, store, and process your information in countries other
+                    than your own.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    Our servers are located in the United Kingdom. If you are accessing our Website from outside the
+                    United Kingdom, please be aware that your information may be transferred to, stored, and processed
+                    by us in our facilities and by those third parties with whom we may share your personal information
+                    (see "<a href="#section3" class="hover:text-indigo-600 dark:hover:text-indigo-500 uppercase">Will
+                        your information be shared with anyone?</a>" above), in the United States, and other countries.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    If you are a resident in the European Economic Area (EEA) or United Kingdom (UK), then these
+                    countries
+                    may not necessarily have data protection laws or other similar laws as comprehensive as those in
+                    your country. We will however take all necessary measures to protect your personal information in
+                    accordance with this privacy notice and applicable law.
+                </p>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-300 dark:bg-gray-700" id="section7">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    7. What is our stance on third-party websites?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We are not responsible for the safety of any information that you share
+                    with third-party providers who advertise, but are not affiliated with, our Website.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    The Website may contain advertisements from third parties that are not affiliated with us and which
+                    may link to other websites, online services or mobile applications. We cannot guarantee the safety
+                    and privacy of data you provide to any third parties. Any data collected by third parties is not
+                    covered by this privacy notice. We are not responsible for the content or privacy and security
+                    practices and policies of any third parties, including other websites, services or applications that
+                    may be linked to or from the Website. You should review the policies of such third parties and
+                    contact them directly to respond to your questions.
+                </p>
+            </div>
+        </section>
+        <section class="relative pb-20 dark:bg-gray-900" id="section8">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    8. How long do we keep your information?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We keep your information for as long as necessary to fulfill the purposes
+                    outlined in this privacy notice unless otherwise required by law.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We will only keep your personal information for as long as it is necessary for the purposes set out
+                    in this privacy notice, unless a longer retention period is required or permitted by law (such as
+                    tax, accounting or other legal requirements). No purpose in this notice will require us keeping your
+                    personal information for longer than 2 years.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    When we have no ongoing legitimate business need to process your personal information, we will
+                    either delete or anonymize such information, or, if this is not possible (for example, because your
+                    personal information has been stored in backup archives), then we will securely store your personal
+                    information and isolate it from any further processing until deletion is possible.
+                </p>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-300 dark:bg-gray-700" id="section9">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    9. How do we keep your information sage?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We aim to protect your personal information through a system of
+                    organizational and technical security measures.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We have implemented appropriate technical and organizational security measures designed to protect
+                    the security of any personal information we process. However, despite our safeguards and efforts to
+                    secure your information, no electronic transmission over the Internet or information storage
+                    technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers,
+                    cybercriminals, or other unauthorized third parties will not be able to defeat our security, and
+                    improperly collect, access, steal, or modify your information. Although we will do our best to
+                    protect your personal information, transmission of personal information to and from our Website is
+                    at your own risk. You should only access the Website within a secure environment.
+                </p>
+            </div>
+        </section>
+        <section class="relative pb-20 dark:bg-gray-900" id="section10">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    10. Do we collect information from minors?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> We do not knowingly collect data from or market to children under 18
+                    years of age.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We do not knowingly solicit data from or market to children under 18 years of age. By using the
+                    Website, you represent that you are at least 18 or that you are the parent or guardian of such a
+                    minor and consent to such minor dependent’s use of the Website. If we learn that personal
+                    information from users less than 18 years of age has been collected, we will deactivate the account
+                    and take reasonable measures to promptly delete such data from our records. If you become aware of
+                    any data we may have collected from children under age 18, please contact us at <a
+                        href="mailto:hello@getwebapps.uk"
+                        class="hover:text-indigo-600 dark:hover:text-indigo-500">hello@getwebapps.uk</a>
+                </p>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-300 dark:bg-gray-700" id="section11">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    11. What are your privacy rights?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> In some regions, such as the European Economic Area (EEA) and United
+                    Kingdom (UK), you have rights that allow you greater access to and control over your personal
+                    information. You may review, change, or terminate your account at any time.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    In some regions (like the EEA and UK), you have certain rights under applicable data protection
+                    laws. These may include the right (i) to request access and obtain a copy of your personal
+                    information, (ii) to request rectification or erasure; (iii) to restrict the processing of your
+                    personal information; and (iv) if applicable, to data portability. In certain circumstances, you may
+                    also have the right to object to the processing of your personal information. To make such a
+                    request, please use the <a href="#section15"
+                        class="hover:text-indigo-600 dark:hover:text-indigo-500">contact details</a> provided below. We
+                    will consider and act upon any request in accordance with applicable data protection laws.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    If we are relying on your consent to process your personal information, you have the right to
+                    withdraw your consent at any time. Please note however that this will not affect the lawfulness of
+                    the processing before its withdrawal, nor will it affect the processing of your personal information
+                    conducted in reliance on lawful processing grounds other than consent.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    If you are a resident in the EEA or UK and you believe we are unlawfully processing your personal
+                    information, you also have the right to complain to your local data protection supervisory
+                    authority. You can find their contact details here: <a
+                        href="https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm"
+                        target="_blank" rel="noopener noreferrer"
+                        class="hover:text-indigo-600 dark:hover:text-indigo-500">https://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm</a>.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    If you are a resident in Switzerland, the contact details for the data protection authorities are
+                    available here: <a href="https://www.edoeb.admin.ch/edoeb/en/home.html" target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-indigo-600 dark:hover:text-indigo-500">https://www.edoeb.admin.ch/edoeb/en/home.html</a>.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong><u>Cookies and similar technologies:</u></strong> Most Web browsers are set to accept
+                    cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and
+                    to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain
+                    features or services of our Website. To opt-out of interest-based advertising by advertisers on our
+                    Website visit <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer"
+                        class="hover:text-indigo-600 dark:hover:text-indigo-500">http://www.aboutads.info/choices/</a>.
+                </p>
+            </div>
+        </section>
+        <section class="relative pb-20 dark:bg-gray-900" id="section12">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    12. Controls for do-not-track features
+                </p>
+
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track
+                    ("DNT") feature or setting you can activate to signal your privacy preference not to have data about
+                    your online browsing activities monitored and collected. At this stage no uniform technology
+                    standard for recognizing and implementing DNT signals has been finalized. As such, we do not
+                    currently respond to DNT browser signals or any other mechanism that automatically communicates your
+                    choice not to be tracked online. If a standard for online tracking is adopted that we must follow in
+                    the future, we will inform you about that practice in a revised version of this privacy notice.
+                </p>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-300 dark:bg-gray-700" id="section13">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    13. Do California residents have specific privacy rights?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> Yes, if you are a resident of California, you are granted specific rights
+                    regarding access to your personal information.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users
+                    who are California residents to request and obtain from us, once a year and free of charge,
+                    information about categories of personal information (if any) we disclosed to third parties for
+                    direct marketing purposes and the names and addresses of all third parties with which we shared
+                    personal information in the immediately preceding calendar year. If you are a California resident
+                    and would like to make such a request, please submit your request in writing to us using the contact
+                    information provided below.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    If you are under 18 years of age, reside in California, and have a registered account with the
+                    Website, you have the right to request removal of unwanted data that you publicly post on the
+                    Website. To request removal of such data, please contact us using the contact information provided
+                    below, and include the email address associated with your account and a statement that you reside in
+                    California. We will make sure the data is not publicly displayed on the Website, but please be aware
+                    that the data may not be completely or comprehensively removed from all our systems (e.g. backups,
+                    etc.).
+                </p>
+            </div>
+        </section>
+        <section class="relative pb-20 dark:bg-gray-900" id="section14">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    14. Do we make updates to this notice?
+                </p>
+
+                <p class="text-lg font-light italic leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    <strong>In Short:</strong> Yes, we will update this notice as necessary to stay compliant with
+                    relevant laws.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    We may update this privacy notice from time to time. The updated version will be indicated by an
+                    updated "Revised" date and the updated version will be effective as soon as it is accessible. If we
+                    make material changes to this privacy notice, we may notify you either by prominently posting a
+                    notice of such changes or by directly sending you a notification. We encourage you to review this
+                    privacy notice frequently to be informed of how we are protecting your information.
+                </p>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-300 dark:bg-gray-700" id="section15">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-300 dark:text-gray-700 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    15. How can you contact us about this notice?
+                </p>
+
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    If you have questions or comments about this notice, you may email us at <a
+                        href="mailto:hello@getwebapps.uk">hello@getwebapps.uk</a>.
+                </p>
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    If you are a resident in the United Kingdom, the "data controller" of your personal information is
+                    WebApps. WebApps has appointed Robert Trehy to be its representative in the UK. You can contact them
+                    directly regarding the processing of your information by WebApps, by email at<a
+                        href="mailto:robert@getwebapps.uk">robert@getwebapps.uk</a>
+                </p>
+            </div>
+        </section>
+        <section class="relative pb-20 dark:bg-gray-900" id="section16">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-white dark:text-gray-900 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-24 py-4">
+                <p class="text-lg font-bold leading-relaxed pt-8 text-gray-700 dark:text-gray-300 uppercase">
+                    16. How can you review, update, or delete the data we collect from you?
+                </p>
+
+                <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
+                    Based on the applicable laws of your country, you may have the right to request access to the
+                    personal information we collect from you, change that information, or delete it in some
+                    circumstances. To request to review, update, or delete your personal information, please submit a
+                    request by email to <a href="mailto:hello@getwebapps.uk">hello@getwebapps.uk</a>.
+                </p>
+            </div>
+        </section>
+        <section class="pb-20 relative block bg-gray-900 dark:bg-gray-600" id="get-started">
+            <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+                style="height: 80px;">
+                <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                    <polygon class="text-gray-900 dark:text-gray-600 fill-current" points="2560 0 2560 100 0 100">
+                    </polygon>
+                </svg>
+            </div>
+            <div class="container mx-auto px-4 lg:pt-12">
+                <div class="flex flex-wrap text-center justify-center">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <h2 class="text-4xl font-semibold text-white dark:text-gray-900">Get Started</h2>
+                        <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-200 dark:text-gray-900">
+                            In order to get started with WebApps, simply <a
+                                href="https://github.com/RTWA/WebApps/releases/latest"
+                                class="text-indigo-600 dark:text-indigo-500">Download the latest version</a> from GitHub
+                            and follow the instructions in our <a href="https://docs.getwebapps.uk"
+                                class="text-indigo-600 dark:text-indigo-500">Documentation</a>!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container mx-auto px-4 lg:pt-8 lg:pb-12 text-center">
+                <a href="https://github.com/RTWA/WebApps/releases/latest"
+                    class="text-gray-800 dark:text-gray-100 hover:text-white dark:hover:text-gray-900 bg-white dark:bg-gray-900 hover:bg-gray-900 dark:hover:bg-gray-600 text-2xl font-bold uppercase px-16 py-8 rounded outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 inline-flex items-center"
+                    type="button" style="transition: all 0.15s ease 0s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Download WebApps
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="relative bg-gray-300 dark:bg-black pt-8 pb-6">
+        <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+            style="height: 80px;">
+            <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                <polygon class="text-gray-300 dark:text-black fill-current" points="2560 0 2560 100 0 100"></polygon>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-6/12 px-4">
+                    <h4 class="text-3xl font-semibold dark:text-gray-100">Report an issue</h4>
+                    <h5 class="text-lg mt-0 mb-2 text-gray-700 dark:text-gray-100">
+                        Please report any issues on our GitHub repository.<br />
+                        We aim to respond within 1-2 business days.
+                    </h5>
+                    <div class="mt-6 flex flex-row items-center">
+                        <a class="bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3 inline-block"
+                            href="https://github.com/RTWA/WebApps">
+                            <svg class="w-4 h-4" viewBox="0 0 256 250" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                <path
+                                    d="M128.00106,0 C57.3172926,0 0,57.3066942 0,128.00106 C0,184.555281 36.6761997,232.535542 87.534937,249.460899 C93.9320223,250.645779 96.280588,246.684165 96.280588,243.303333 C96.280588,240.251045 96.1618878,230.167899 96.106777,219.472176 C60.4967585,227.215235 52.9826207,204.369712 52.9826207,204.369712 C47.1599584,189.574598 38.770408,185.640538 38.770408,185.640538 C27.1568785,177.696113 39.6458206,177.859325 39.6458206,177.859325 C52.4993419,178.762293 59.267365,191.04987 59.267365,191.04987 C70.6837675,210.618423 89.2115753,204.961093 96.5158685,201.690482 C97.6647155,193.417512 100.981959,187.77078 104.642583,184.574357 C76.211799,181.33766 46.324819,170.362144 46.324819,121.315702 C46.324819,107.340889 51.3250588,95.9223682 59.5132437,86.9583937 C58.1842268,83.7344152 53.8029229,70.715562 60.7532354,53.0843636 C60.7532354,53.0843636 71.5019501,49.6441813 95.9626412,66.2049595 C106.172967,63.368876 117.123047,61.9465949 128.00106,61.8978432 C138.879073,61.9465949 149.837632,63.368876 160.067033,66.2049595 C184.49805,49.6441813 195.231926,53.0843636 195.231926,53.0843636 C202.199197,70.715562 197.815773,83.7344152 196.486756,86.9583937 C204.694018,95.9223682 209.660343,107.340889 209.660343,121.315702 C209.660343,170.478725 179.716133,181.303747 151.213281,184.472614 C155.80443,188.444828 159.895342,196.234518 159.895342,208.176593 C159.895342,225.303317 159.746968,239.087361 159.746968,243.303333 C159.746968,246.709601 162.05102,250.70089 168.53925,249.443941 C219.370432,232.499507 256,184.536204 256,128.00106 C256,57.3066942 198.691187,0 128.00106,0 Z M47.9405593,182.340212 C47.6586465,182.976105 46.6581745,183.166873 45.7467277,182.730227 C44.8183235,182.312656 44.2968914,181.445722 44.5978808,180.80771 C44.8734344,180.152739 45.876026,179.97045 46.8023103,180.409216 C47.7328342,180.826786 48.2627451,181.702199 47.9405593,182.340212 Z M54.2367892,187.958254 C53.6263318,188.524199 52.4329723,188.261363 51.6232682,187.366874 C50.7860088,186.474504 50.6291553,185.281144 51.2480912,184.70672 C51.8776254,184.140775 53.0349512,184.405731 53.8743302,185.298101 C54.7115892,186.201069 54.8748019,187.38595 54.2367892,187.958254 Z M58.5562413,195.146347 C57.7719732,195.691096 56.4895886,195.180261 55.6968417,194.042013 C54.9125733,192.903764 54.9125733,191.538713 55.713799,190.991845 C56.5086651,190.444977 57.7719732,190.936735 58.5753181,192.066505 C59.3574669,193.22383 59.3574669,194.58888 58.5562413,195.146347 Z M65.8613592,203.471174 C65.1597571,204.244846 63.6654083,204.03712 62.5716717,202.981538 C61.4524999,201.94927 61.1409122,200.484596 61.8446341,199.710926 C62.5547146,198.935137 64.0575422,199.15346 65.1597571,200.200564 C66.2704506,201.230712 66.6095936,202.705984 65.8613592,203.471174 Z M75.3025151,206.281542 C74.9930474,207.284134 73.553809,207.739857 72.1039724,207.313809 C70.6562556,206.875043 69.7087748,205.700761 70.0012857,204.687571 C70.302275,203.678621 71.7478721,203.20382 73.2083069,203.659543 C74.6539041,204.09619 75.6035048,205.261994 75.3025151,206.281542 Z M86.046947,207.473627 C86.0829806,208.529209 84.8535871,209.404622 83.3316829,209.4237 C81.8013,209.457614 80.563428,208.603398 80.5464708,207.564772 C80.5464708,206.498591 81.7483088,205.631657 83.2786917,205.606221 C84.8005962,205.576546 86.046947,206.424403 86.046947,207.473627 Z M96.6021471,207.069023 C96.7844366,208.099171 95.7267341,209.156872 94.215428,209.438785 C92.7295577,209.710099 91.3539086,209.074206 91.1652603,208.052538 C90.9808515,206.996955 92.0576306,205.939253 93.5413813,205.66582 C95.054807,205.402984 96.4092596,206.021919 96.6021471,207.069023 Z">
+                                </path>
+                            </svg>
+                            <span class="sr-only">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full lg:w-6/12 px-4">
+                    <div class="flex flex-wrap items-top mb-6">
+                        <div class="w-full lg:w-4/12 px-4 ml-auto">
+                            <span
+                                class="block uppercase text-gray-600 dark:text-gray-200 text-sm font-semibold mb-2">Useful
+                                Links</span>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white font-semibold block pb-2 text-sm"
+                                        href="https://studio.getwebapps.uk">WebApps Studio</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white font-semibold block pb-2 text-sm"
+                                        href="https://docs.getwebapps.uk">WebApps Documentation</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-700 dark:text-gray-100 hover:text-gray-900 dark:hover:text-white font-semibold block pb-2 text-sm"
+                                        href="https://www.github.com/RTWA">WebApps on Github</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center md:justify-between justify-center">
+                <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+                    <div class="text-sm text-gray-600 dark:text-gray-200 font-semibold py-1">
+                        Copyright © 2021 <a href="https://www.github.com/RTWA"
+                            class="text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">WebApps</a>.
+                    </div>
+                </div>
+                <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+                    <div class="text-sm text-gray-600 dark:text-gray-200 font-semibold py-1">
+                        <a href="/privacy.html"
+                            class="text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">Website
+                            Privacy Policy</a>
+                        &nbsp;&bull;&nbsp;
+                        <a href="/cookies.html"
+                            class="text-gray-600 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">Website
+                            Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function toggleNavbar(collapseID) {
+        document.getElementById(collapseID).classList.toggle("hidden");
+        document.getElementById(collapseID).classList.toggle("block");
+    }
+</script>
+
+</html>
