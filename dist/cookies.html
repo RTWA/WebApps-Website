@@ -30,13 +30,54 @@
 
     <link rel="stylesheet" href="css/main.css" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- WebP support detection -->
+    <script src="js/modernizr-custom.js"></script>
+
+    <!-- Google Tag Script Load -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVRYZEQ7P5"></script>
+
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js"
+        data-cfasync="false"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-VVRYZEQ7P5');
+        window.addEventListener('load', function () {
+            window.cookieconsent.initialise({
+                revokeBtn: "<div class='cc-revoke'></div>",
+                type: "opt-in",
+                position: "bottom-left",
+                theme: "edgeless",
+                palette: {
+                    popup: {
+                        background: "#000",
+                        text: "#fff"
+                    },
+                    button: {
+                        background: "#fd0",
+                        text: "#000"
+                    }
+                },
+                content: {
+                    link: "Cookie Policy",
+                    href: "https://getwebapps.uk/cookies.html"
+                },
+                onInitialise: function (status) {
+                    if (status == cookieconsent.status.allow) myScripts();
+                },
+                onStatusChange: function (status) {
+                    if (this.hasConsented()) myScripts();
+                }
+            })
+        });
+
+        function myScripts() {
+            // Global site tag (gtag.js) - Google Analytics
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-VVRYZEQ7P5');
+        }
     </script>
 </head>
 
@@ -138,7 +179,7 @@
                                 Website Cookie Policy
                             </h1>
                             <p class="mt-4 text-lg text-gray-300 lg:w-6/12 mx-auto">
-                                Last Updated 11th November 2021
+                                Last Updated 18th November 2021
                             </p>
                         </div>
                     </div>
@@ -347,6 +388,37 @@
                     <tr>
                         <th class="w-28 text-right">Expires in:</th>
                         <td class="pl-4">1 year, 11 months, 29 days</td>
+                    </tr>
+                </table>
+                <table class="text-gray-700 dark:text-gray-300 border border-gray-500 my-2 p-4 w-full">
+                    <tr>
+                        <th class="w-28 text-right">Name:</th>
+                        <td class="pl-4">cookieconsent_status</td>
+                    </tr>
+                    <tr>
+                        <th class="w-28 text-right">Purpose:</th>
+                        <td class="pl-4">It records the users consent to store cookies. It is a HTTP cookie that expires after 1 year.</td>
+                    </tr>
+                    <tr>
+                        <th class="w-28 text-right">Provider:</th>
+                        <td class="pl-4">getwebapps.uk</td>
+                    </tr>
+                    <tr>
+                        <th class="w-28 text-right">Service:</th>
+                        <td class="pl-4">WebApps</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="w-28 text-right">Country:</th>
+                        <td class="pl-4">United Kingdom</td>
+                    </tr>
+                    <tr>
+                        <th class="w-28 text-right">Type:</th>
+                        <td class="pl-4">http_cookie</td>
+                    </tr>
+                    <tr>
+                        <th class="w-28 text-right">Expires in:</th>
+                        <td class="pl-4">11 months, 29 days</td>
                     </tr>
                 </table>
             </div>

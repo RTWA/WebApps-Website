@@ -16,4 +16,18 @@
         background: #6366F1;
         background: linear-gradient(-135deg, #3c183a, #3447a6);
     }
+
+    .lightBg, .no-webp .lightBg {
+        background-image: url("../images/LightModeDashboard.png");
+    }
+    .darkBg, .no-webp .darkBg {
+        background-image: url("../images/DarkModeDashboard.png");
+    }
+
+    .webp .lightBg {
+        background-image: url("../images/LightModeDashboard.webp");
+    }
+    .webp .darkBg {
+        background-image: url("../images/DarkModeDashboard.webp");
+    }
 }

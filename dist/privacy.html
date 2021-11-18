@@ -30,13 +30,54 @@
 
     <link rel="stylesheet" href="css/main.css" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- WebP support detection -->
+    <script src="js/modernizr-custom.js"></script>
+
+    <!-- Google Tag Script Load -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVRYZEQ7P5"></script>
+
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js"
+        data-cfasync="false"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-VVRYZEQ7P5');
+        window.addEventListener('load', function () {
+            window.cookieconsent.initialise({
+                revokeBtn: "<div class='cc-revoke'></div>",
+                type: "opt-in",
+                position: "bottom-left",
+                theme: "edgeless",
+                palette: {
+                    popup: {
+                        background: "#000",
+                        text: "#fff"
+                    },
+                    button: {
+                        background: "#fd0",
+                        text: "#000"
+                    }
+                },
+                content: {
+                    link: "Cookie Policy",
+                    href: "https://getwebapps.uk/cookies.html"
+                },
+                onInitialise: function (status) {
+                    if (status == cookieconsent.status.allow) myScripts();
+                },
+                onStatusChange: function (status) {
+                    if (this.hasConsented()) myScripts();
+                }
+            })
+        });
+
+        function myScripts() {
+            // Global site tag (gtag.js) - Google Analytics
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-VVRYZEQ7P5');
+        }
     </script>
 </head>
 
@@ -210,7 +251,7 @@
                 </p>
                 <ol class="py-4 pl-4 text-gray-700 dark:text-gray-300 uppercase">
                     <li><a href="#section1" class="hover:text-indigo-600 dark:hover:text-indigo-500">1. What information
-                            do we collect</a></li>
+                            do we collect?</a></li>
                     <li><a href="#section2" class="hover:text-indigo-600 dark:hover:text-indigo-500">2. How do we use
                             your information?</a></li>
                     <li><a href="#section3" class="hover:text-indigo-600 dark:hover:text-indigo-500">3. Will your
@@ -273,7 +314,7 @@
                     Website, the choices you make and the procuts and features you use. The personal information we
                     collect may include the following:
                     <br />&nbsp;<br />
-                    <span class="italic">No PII is provided.</span>
+                    <span class="italic">No PII is collected.</span>
                     <br />&nbsp;<br />
                     All personal information that you provide to us must be true, complete and accurate, and you must
                     notify us of any changes to such personal information.
@@ -485,14 +526,9 @@
                     your data based on your consent and you wish to revoke your consent, please contact us using the
                     contact details provided in the sectino below titled "<a href="#section15"
                         class="hover:text-indigo-600 dark:hover:text-indigo-500 uppercase">How can you contact us about
-                        this noticed?</a>"
+                        this notice?</a>"
                 </p>
                 <ul class="list-inside list-disc pl-4 text-gray-700 dark:text-gray-300">
-                    <li class="py-2">
-                        <strong>Advertising, Direct Marketing and Lead Generation</strong>
-                        <br />
-                        Google AdSense
-                    </li>
                     <li class="py-2">
                         <strong>Web and Mobile Analytics</strong>
                         <br />
@@ -857,7 +893,7 @@
                 <p class="text-lg font-light leading-relaxed pt-4 text-gray-700 dark:text-gray-300">
                     If you are a resident in the United Kingdom, the "data controller" of your personal information is
                     WebApps. WebApps has appointed Robert Trehy to be its representative in the UK. You can contact them
-                    directly regarding the processing of your information by WebApps, by email at<a
+                    directly regarding the processing of your information by WebApps, by email at <a
                         href="mailto:robert@getwebapps.uk">robert@getwebapps.uk</a>
                 </p>
             </div>
